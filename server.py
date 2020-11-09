@@ -14,47 +14,18 @@ def html_page(page_name):
     print(page_name)
     return render_template(f'{page_name}')
 
-def get_work_data(id):
-    with open('templates/projects/myworks.json') as f:
-        data = json.load(f)
-        result = filter(lambda work_id: work_id['id'] == id, data)
-        return list(result)
 def showjson(id):
     SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
     json_url = os.path.join(SITE_ROOT, "templates/projects", "myworks.json")
     data = json.load(open(json_url))
     result = filter(lambda work_id: work_id['id'] == id, data)
     return list(result)
-@app.route('/projects/<string:page_name>')
 
+@app.route('/projects/<string:page_name>')
 def projects_page(page_name):
     query_param =  {k:v for k, v in request.args.items()}
     p_id = query_param['id']
     work = showjson(p_id)
-    works = [
-        {
-            "id":"0",
-            "title":"E-commerce Project",
-            "images":["e-commerce-project-main.JPG"],
-            "description": "Lorem Something etc"
-
-        },
-        {
-            "id":"1",
-            "title":"Mini Rakuten TV",
-            "images":["mini-rakuten.PNG"],
-            "description": "Lorem Something etc"
-
-        },
-        {
-            "id":"2",
-            "title":"Japan Tours",
-            "images":["jatours-main.JPG"],
-            "description": "Lorem Something etc"
-
-        }
-    ]
-
     return render_template(f'projects/{page_name}', project=work[0])
 
 
