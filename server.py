@@ -23,9 +23,32 @@ def get_work_data(id):
 
 def projects_page(page_name):
     query_param =  {k:v for k, v in request.args.items()}
-    project_id = query_param['id']
-    project = get_work_data(project_id)
-    return render_template(f'projects/{page_name}', project=project)
+    p_id = int(query_param['id'])
+    works = [
+        {
+            "id":"0",
+            "title":"E-commerce Project",
+            "images":["e-commerce-project-main.JPG"],
+            "description": "Lorem Something etc"
+
+        },
+        {
+            "id":"1",
+            "title":"Mini Rakuten TV",
+            "images":["mini-rakuten.PNG"],
+            "description": "Lorem Something etc"
+
+        },
+        {
+            "id":"2",
+            "title":"Japan Tours",
+            "images":["jatours-main.JPG"],
+            "description": "Lorem Something etc"
+
+        }
+    ]
+    
+    return render_template(f'projects/{page_name}', project=works[p_id])
 
 
 def write_to_file(data):
