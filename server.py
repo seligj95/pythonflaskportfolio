@@ -22,8 +22,10 @@ def get_work_data(id):
 @app.route('/projects/<string:page_name>')
 
 def projects_page(page_name):
-  
-    return render_template(f'projects/{page_name}')
+    query_param =  {k:v for k, v in request.args.items()}
+    project_id = query_param['id']
+    project = get_work_data(project_id)
+    return render_template(f'projects/{page_name}', project=project)
 
 
 def write_to_file(data):
