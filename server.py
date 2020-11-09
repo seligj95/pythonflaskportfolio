@@ -26,7 +26,7 @@ def projects_page(page_name):
     query_param =  {k:v for k, v in request.args.items()}
     p_id = query_param['id']
     work = showjson(p_id)
-    return render_template(f'projects/{page_name}', project=work[0])
+    return render_template(f'projects/{page_name}.html', project=work[0])
 
 
 def write_to_file(data):
