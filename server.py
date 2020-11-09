@@ -3,6 +3,7 @@ import json
 from operator import itemgetter
 from flask import Flask, render_template , request , redirect
 app = Flask(__name__)
+app.debug = True
 
 @app.route('/')
 def home():
@@ -22,13 +23,9 @@ def get_work_data(id):
 @app.route('/projects/<string:page_name>')
 
 def projects_page(page_name):
-    project= {
-        "id":"01",
-        "title":"E-commerce Project",
-        "images":["e-commerce-project-main.JPG"],
-        "description": "Lorem Something etc"
-
-    },
+    query_param =  {k:v for k, v in request.args.items()}
+    project_id = query_param['id']
+    project = get_work_data(project_id)
     return render_template(f'projects/{page_name}', project=project)
 
 
