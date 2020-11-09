@@ -48,7 +48,7 @@ def projects_page(page_name):
         }
     ]
 
-    return render_template(f'projects/{page_name}', project=works[0])
+    return render_template(f'projects/{page_name}', project=works[p_id])
 
 
 def write_to_file(data):
