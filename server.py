@@ -11,7 +11,7 @@ def home():
 @app.route('/<string:page_name>')
 def html_page(page_name):
     print(page_name)
-    return render_template(page_name)
+    return render_template(f'{page_name}.html')
 
 def get_work_data(id):
     with open('templates/projects/myworks.json') as f:
@@ -25,8 +25,7 @@ def projects_page(page_name):
     query_param =  {k:v for k, v in request.args.items()}
     project_id = query_param['id']
     project = get_work_data(project_id)
-    title = project[0]['title']
-    return render_template(f'projects/{page_name}', project=project)
+    return render_template(f'projects/{page_name}.html', project=project)
 
 
 def write_to_file(data):
