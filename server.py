@@ -19,13 +19,13 @@ def get_work_data(id):
         result = filter(lambda work_id: work_id['id'] == id, data)
         return list(result)
 
-@app.route('/projects/<string:page_name>')
+@app.route('/project')
 
-def projects_page(page_name):
+def projects_page():
     query_param =  {k:v for k, v in request.args.items()}
     project_id = query_param['id']
     project = get_work_data(project_id)
-    return render_template(f'projects/{page_name}.html', project=project)
+    return render_template(f'projects/project.html', project=project)
 
 
 def write_to_file(data):
