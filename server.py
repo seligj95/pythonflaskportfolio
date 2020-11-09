@@ -22,8 +22,14 @@ def get_work_data(id):
 @app.route('/projects/<string:page_name>')
 
 def projects_page(page_name):
-    
-    return render_template(f'projects/{page_name}')
+    project= {
+        "id":"01",
+        "title":"E-commerce Project",
+        "images":["e-commerce-project-main.JPG"],
+        "description": "Lorem Something etc"
+
+    },
+    return render_template(f'projects/{page_name}', project=project)
 
 
 def write_to_file(data):
