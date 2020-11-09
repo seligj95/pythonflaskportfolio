@@ -1,7 +1,8 @@
 import csv
-import json
+import os
 from operator import itemgetter
-from flask import Flask, render_template , request , redirect
+from flask import Flask, render_template , request , redirect, url_for, json
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -18,12 +19,18 @@ def get_work_data(id):
         data = json.load(f)
         result = filter(lambda work_id: work_id['id'] == id, data)
         return list(result)
-
+def showjson(id):
+    SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
+    json_url = os.path.join(SITE_ROOT, "templates/projects", "myworks.json")
+    data = json.load(open(json_url))
+    result = filter(lambda work_id: work_id['id'] == id, data)
+    return list(result)
 @app.route('/projects/<string:page_name>')
 
 def projects_page(page_name):
     query_param =  {k:v for k, v in request.args.items()}
-    p_id = int(query_param['id'])
+    p_id = query_param['id']
+    work = showjson(p_id)
     works = [
         {
             "id":"0",
@@ -48,7 +55,7 @@ def projects_page(page_name):
         }
     ]
 
-    return render_template(f'projects/{page_name}', project=works[p_id])
+    return render_template(f'projects/{page_name}', project=work[0])
 
 
 def write_to_file(data):
