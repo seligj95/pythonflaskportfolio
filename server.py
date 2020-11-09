@@ -26,7 +26,7 @@ def projects_page(page_name):
     # project_id = query_param['id']
     # project = get_work_data(project_id)
     # return render_template(f'projects/{page_name}', project=project)
-    return render_template(f'projects/{page_name}')
+    return render_template(f'projects/{page_name}', project=project)
 
 
 def write_to_file(data):
