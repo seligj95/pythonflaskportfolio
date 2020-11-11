@@ -1,1 +1,1 @@
-echo Testing
+sudo echo Testing
