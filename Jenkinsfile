@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Building'
-        sh '''jenkins/build.sh
+        sh '''jenkins/workspace/build.sh
 '''
       }
     }
@@ -12,14 +12,14 @@ pipeline {
     stage('Test') {
       steps {
         echo 'Testing'
-        sh 'jenkins/test-all.sh'
+        sh 'jenkins/workspace/test-all.sh'
       }
     }
 
     stage('Deploy') {
       steps {
         echo 'Deploying'
-        sh 'jenkins/deploy.sh'
+        sh 'jenkins/workspace/deploy.sh'
       }
     }
 
