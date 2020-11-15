@@ -5,3 +5,5 @@ Portfolio build using Python and Flask and html template
 `python -m flask run`
 ## To run app in dev
 `export FLASK_DEBUG=true`
+
+testing a change 
