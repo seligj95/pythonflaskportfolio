@@ -7,4 +7,4 @@ My Awesome Portfolio build using Python and Flask and html template
 ## To run app in dev
 `export FLASK_DEBUG=true`
 
-testing dev
+testing 
