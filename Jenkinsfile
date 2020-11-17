@@ -3,9 +3,18 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        echo 'hello'
-        sh 'echo hello'
-        sh 'git status'
+        sh 'echo Building ...'
+      }
+    }
+
+    stage('test') {
+      steps {
+        sh 'echo Testing ...'
+      }
+    }
+
+    stage('Deploy') {
+      steps {
         sh '''cd /var/www/html/python-portfolio/
 git pull origin dev'''
       }
