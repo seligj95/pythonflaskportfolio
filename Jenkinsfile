@@ -6,7 +6,9 @@ pipeline {
         echo 'hello'
         sh 'echo hello'
         sh 'git status'
-        sh 'ls'
+        sh '''cd /var/www/html/python-portfolio/
+git pull origin dev
+git status'''
       }
     }
 
