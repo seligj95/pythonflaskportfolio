@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh '''git pull origin dev
+        sh '''sh \'echo "Hello World"\'
 '''
       }
     }
