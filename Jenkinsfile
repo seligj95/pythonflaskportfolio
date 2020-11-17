@@ -14,6 +14,7 @@ pipeline {
     }
 
     stage('Deploy') {
+      when { branch 'dev' }
       steps {
         sh '''cd /var/www/html/python-portfolio/
 git pull origin dev'''
