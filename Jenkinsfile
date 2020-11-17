@@ -7,7 +7,7 @@ pipeline {
         sh 'echo hello'
         sh 'git status'
         sh '''cd /var/www/html/python-portfolio/
-pwd'''
+git pull origin dev'''
       }
     }
 
