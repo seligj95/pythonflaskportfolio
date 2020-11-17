@@ -7,8 +7,8 @@ pipeline {
         sh 'echo hello'
         sh 'git status'
         sh '''cd /var/www/html/python-portfolio/
-git pull origin dev
-git status'''
+sudo git pull origin dev
+sudo git status'''
       }
     }
 
