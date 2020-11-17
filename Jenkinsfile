@@ -5,6 +5,7 @@ pipeline {
       steps {
         echo 'hello'
         sh 'echo hello'
+        sh 'git status'
       }
     }
 
