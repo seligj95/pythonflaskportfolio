@@ -14,15 +14,15 @@ pipeline {
     }
 
     stage('Deploy') {
-      when { branch 'dev' }
+      when { branch 'master' }
       steps {
         sh '''cd /var/www/html/python-portfolio/
-git pull origin dev'''
+git pull origin master'''
       }
     }
 
   }
   triggers {
-    cron('H/5 * * * *')
+    githubPush()
   }
 }
