@@ -23,6 +23,6 @@ git pull origin master'''
 
   }
   triggers {
-        pollSCM('')
-  }
+        githubPush()
+    }
 }
