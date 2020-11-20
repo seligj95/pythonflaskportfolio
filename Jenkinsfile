@@ -19,6 +19,11 @@ pipeline {
         sh '''cd /var/www/html/python-portfolio/
 git pull origin master'''
       }
+        when { branch 'dev' }
+      steps {
+        sh '''cd /var/www/html/dev/python-portfolio/
+git pull origin dev'''
+      }
     }
 
   }
