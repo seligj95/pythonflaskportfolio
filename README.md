@@ -8,6 +8,3 @@ My Awesome Portfolio build using Python and Flask and html template
 `export FLASK_DEBUG=true`
 
 
-
-someth else something nice testing
-
