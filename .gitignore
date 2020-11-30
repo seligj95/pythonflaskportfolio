@@ -6,3 +6,4 @@ share
 pyvenv.cfg
 include
 .htaccess
+venv
