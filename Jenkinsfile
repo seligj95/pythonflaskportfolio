@@ -13,13 +13,15 @@ pipeline {
       }
     }
 
-    stage('Deploy') {
+    stage('Deploy Master') {
       when { branch 'master' }
       steps {
         sh '''cd /var/www/html/python-portfolio/
 git pull origin master'''
       }
-        when { branch 'dev' }
+    }
+    stage('Deploy Dev') {
+      when { branch 'dev' }
       steps {
         sh '''cd /var/www/html/dev/python-portfolio/
 git pull origin dev'''
