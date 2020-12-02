@@ -12,7 +12,7 @@ def home():
 @app.route('/<string:page_name>')
 def html_page(page_name):
     print(page_name)
-    return render_template(f'{page_name}.html')
+    return render_template(f'{page_name}')
 
 def showjson(id):
     SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
