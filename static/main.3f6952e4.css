@@ -12,6 +12,8 @@ html {
 }
 body {
     margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 article,
 aside,
@@ -4756,6 +4758,7 @@ body.minimal {
 }
 .section-container {
     padding: 80px 0;
+    flex: 1 0 auto;
 }
 @media (min-width: 1200px) {
     .section-container {
@@ -5218,10 +5221,7 @@ textarea {
   }
 
 
-/* .footer-container {
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-} */
+.footer-container {
+    flex-shrink: 0;
+}
 /*# sourceMappingURL=main.70a66962.map*/
