@@ -1,0 +1,38 @@
+body {
+  background-color: #232323;
+  margin: 0;
+  font-family: "Montserrat", "Avenir";
+  font-size: 20px;
+  color: ivory;
+}
+#container {
+  display: flex;
+  flex-direction: row;
+}
+.number {
+  margin: 1px;
+  padding: 2px;
+  width: 15px;
+  background-color: red;
+}
+.active {
+  transition-delay: 5s;
+  background-color: black;
+}
+button {
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  height: 100%;
+  font-weight: 700;
+  color: steelblue;
+  letter-spacing: 1px;
+  font-style: inherit;
+  transition: all 0.5s;
+  outline: none;
+  font-size: 17px;
+}
+button:hover {
+  color: white;
+  background: steelblue;
+}
