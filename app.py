@@ -10,6 +10,14 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
+@app.route('/playground')
+def playground_page():
+    return render_template(f'/playground/index.html')
+
+@app.route('/cocktail-shacker')
+def cocktail_page():
+    return render_template(f'/playground/bootcamp/cocktail-shacker/index.html')
+
 @app.route('/<string:page_name>')
 def html_page(page_name):
     try:
@@ -43,6 +51,8 @@ def projects_page(page_name):
         return render_template(f'projects/{page_name}', project=work[0])
 
     return render_template(f'projects/{page_name}.html', project=work[0])
+
+
 
 
 def write_to_file(data):
