@@ -19,5 +19,26 @@
         "images":["jatours-main.JPG"],
         "description": "Lorem Something etc"
 
+    },
+    {
+        "id":"04",
+        "title":"Face Recognition AI",
+        "images":["smart-ai.JPG"],
+        "description": "Lorem Something etc"
+
+    },
+    {
+        "id":"05",
+        "title":"Crytpo Mania",
+        "images":["cryptomania.JPG"],
+        "description": "Lorem Something etc"
+
+    },
+    {
+        "id":"06",
+        "title":"Star Wars Robots",
+        "images":["star-wars.JPG"],
+        "description": "Lorem Something etc"
+
     }
 ]

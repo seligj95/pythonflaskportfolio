@@ -1,0 +1,17 @@
+.project-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.project-box {
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+    border: 1px solid gray;
+    align-items: center;
+    padding: 30px;
+}
+.project-image > a > img {
+    width: 131px;
+    margin-right: 10px;
+}
