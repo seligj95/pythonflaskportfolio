@@ -5142,13 +5142,15 @@ textarea {
     margin-right: 5px;
 }
 .footer-container {
-    background-color: linen;
+    background-color: rgb(32,32,32);
 }
 .footer-container ul {
     list-style: none;
+    font-weight: 900;
 }
 .footer-context {
     padding: 40px;
+    color: white;
 }
 
 .work-container {
