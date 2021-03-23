@@ -61,11 +61,11 @@
 
               <ul class="nav navbar-nav navbar-right navbar-small visible-md visible-lg">
                 <!-- loop over all the prjects -->
-                {%  for p_id in range(1,7):%} 
+                {%  for p_id in range(1 ,projectLenght +1):%} 
                   {% if '0' + p_id|string == project['id'] :%}
-                      <li><a href="./project?id=0{{p_id}}" class='active' title="">00{{p_id}}</a></li>
+                      <li><a href="./project?id=0{{p_id}}&category={{category}}" class='active' title="">00{{p_id}}</a></li>
                   {% else %}
-                      <li><a href="./project?id=0{{p_id}}" title="">00{{p_id}}</a></li>
+                      <li><a href="./project?id=0{{p_id}}&category={{category}}" title="">00{{p_id}}</a></li>
                   {% endif %}
                 {% endfor %}
               </ul>
@@ -79,38 +79,37 @@
       <div class="container">
         <div class="row">
           <div class="col-xs-12">
-            <img src="../static/assets/images/{{project['images'][0]}}" class="img-responsive" alt="">
-            <div class="card-container">
-              <div class="text-center">
-                <h1 class="h2">001 : {{project['title']}}</h1>
+            <img src="../static/assets/images/{{project['images'][0]}}" class="img-responsive img-shadow" alt="">
+            <div class="card-container desc-header">
+              <div class="text-center proj-button ">
+                <div>
+                  <button class="work-button">
+                    <a href="google.com">Visit Website</a>
+                  </button>
+                </div>
+                <h1 class="h2">0{{project['id']}} : {{project['title']}}</h1>
+                <div>
+                  <button class="work-button">
+                    <a href="google.com">Check Repo</a>
+                  </button>
+                </div>
               </div>
-              <p>Nulla facilisi. Vivamus vestibulum, elit in scelerisque ultricies, nisl nunc pulvinar ligula, id sodales arcu sapien in nisi. Quisque libero enim, mattis non augue posuere, venenatis dapibus urna.</p>
-
-              <blockquote>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."</p>
-                <small class="pull-right">Irina Martin</small>
-              </blockquote>
+              <div>
+                <h3>About This Project</h3>
+                <h4>{{project['description']}}</h4>
+              </div>
+              <div>
+                <h3>Technical Sheet</h3>
+                <h4>Code technologies I got involved with while working on this project.</h4>
+                <ul>
+                  {%  for tech in project['technical-sheet']:%} 
+                    <li>{{tech}}</li>
+                  {% endfor %}
+                </ul>
+              </div>
             </div>
           </div>
 
-          
-          
-          <div class="col-md-8 col-md-offset-2 section-container-spacer">
-            <div class="row">
-              <div class="col-xs-12 col-md-6">
-                <img src="../static/assets/images/work001-02.jpg" class="img-responsive" alt="">
-                <p>Menphis skyline</p>
-              </div>
-              <div class="col-xs-12 col-md-6">
-                <img src="../static/assets/images/work001-03.jpg" class="img-responsive" alt="">
-                <p>Menphis skyline</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xs-12">
-            <img src="../static/assets/images/work001-04.jpg" class="img-responsive" alt="">
-          </div>
 
         </div>
       </div>

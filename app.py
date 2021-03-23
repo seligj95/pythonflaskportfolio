@@ -35,24 +35,60 @@ def page_not_found(e):
     # note that we set the 404 status explicitly
     return render_template('404.html'), 404
 
-def showjson(id):
+
+def get_json(path, filename):
     SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
-    json_url = os.path.join(SITE_ROOT, "templates/projects", "myworks.json")
+    json_url = os.path.join(SITE_ROOT, path, filename)
     data = json.load(open(json_url))
-    result = filter(lambda work_id: work_id['id'] == id, data)
-    return list(result)
+    return data
+    
+
+def get_project_by_id(id, category, data):
+    result = []
+    for key in data[category]:
+        for rowKey in data[category][key]:
+            if rowKey['id'] == id:
+                result.append(rowKey)
+    
+    return result
 
 @app.route('/projects/<string:page_name>')
 def projects_page(page_name):
     query_param =  {k:v for k, v in request.args.items()}
     p_id = query_param['id']
-    work = showjson(p_id)
+    category = query_param['category']
+    path =  "templates/projects"
+    filename = "myworks.json"
+    data = get_json(path, filename)
+    projectLenght = 0
+
+    for key in data[category]:
+        projectLenght += len(data[category][key])
+
+
+    work = get_project_by_id(p_id, category, data)
     if '.html' in page_name:
-        return render_template(f'projects/{page_name}', project=work[0])
+        return render_template(
+            f'projects/{page_name}', 
+            project=work[0], 
+            category=category, 
+            projectLenght= projectLenght
+        )
 
-    return render_template(f'projects/{page_name}.html', project=work[0])
+    return render_template(
+        f'projects/{page_name}.html', 
+        project=work[0], 
+        category=category, 
+        projectLenght= projectLenght
+        )
 
 
+@app.route('/works')
+def works_page():
+    SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
+    json_url = os.path.join(SITE_ROOT, "templates/projects", "myworks.json")
+    data = json.load(open(json_url))
+    return render_template('works.html', projects=data)
 
 
 def write_to_file(data):

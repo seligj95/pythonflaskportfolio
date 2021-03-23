@@ -85,218 +85,127 @@
         </div>
       </nav>
     </header>
-
+    <!-- Projects Container  -->
     <div class="section-container">
       <div class="container">
+        <!-- Personal Projects  -->
         <div class="row">
           <div class="col-sm-8 col-sm-offset-2 section-container-spacer">
             <div class="text-center">
-              <h1 class="h2">02 : Works</h1>
+              <h1 class="h2"> Personal Projects</h1>
             </div>
           </div>
 
           <div class="col-md-12">
-            <div id="myCarousel" class="carousel slide projects-carousel">
+            <div id="personalCarousel" class="carousel slide projects-carousel">
               <!-- Carousel items -->
               <div class="carousel-inner">
-                <div class="item active">
-                  <div class="row">
-                    <div class="col-sm-4 work-container">
-                      <a
-                        href="https://mf-online-shop.herokuapp.com/"
-                        target="_blank"
-                        title=""
-                        class="black-image-project-hover"
-                      >
-                        <img
-                          src="./static/assets/images/e-commerce-project-main.JPG"
-                          alt=""
-                          class="img-responsive"
-                        />
-                      </a>
-                      <div class="overlay">
-                        <div class="work-text">
-                          <button class="work-button">
-                            <a
-                              href="https://mf-online-shop.herokuapp.com/"
-                              target="_blank"
-                              >Visit the website</a
-                            >
-                          </button>
-                          <button class="work-button">
-                            <a href="./projects/project?id=01">Read More</a>
-                          </button>
+                {%  for key in projects["personal_projects"] :%} 
+                  {% if key  == 'row-1'%}
+                    <div class="item active">
+                  {% else %}
+                    <div class="item">
+                  {% endif %}
+                      <div class="row">
+                        {%  for index in range(0, projects["personal_projects"][key]|length):%} 
+                        <div class="col-sm-4 work-container">
+                          <a
+                            href="{{projects['personal_projects'][key][index]['URL']}}"
+                            target="_blank"
+                            title=""
+                            class="black-image-project-hover"
+                          >
+                            <img
+                              src="./static/assets/images/{{projects['personal_projects'][key][index]['images'][0]}}"
+                              alt=""
+                              class="img-responsive"
+                            />
+                          </a>
+                          <div class="overlay">
+                            <div class="work-text">
+                              <button class="work-button">
+                                <a
+                                  ref="{{projects['personal_projects'][key][index]['URL']}}"
+                                  target="_blank"
+                                  >Visit the website</a
+                                >
+                              </button>
+                              <button class="work-button">
+                                <a href="./projects/project?id={{projects['personal_projects'][key][index]['id']}}&category=personal_projects">Read More</a>
+                              </button>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    </div>
-                    <div class="col-sm-4 work-container">
-                      <a
-                        href="https://mini-rakutenv.herokuapp.com/"
-                        target="_blank"
-                        title=""
-                        class="black-image-project-hover"
-                      >
-                        <img
-                          src="./static/assets/images/mini-rakuten.PNG"
-                          alt=""
-                          class="img-responsive"
-                        />
-                      </a>
-                      <div class="overlay">
-                        <div class="work-text">
-                          <button class="work-button">
-                            <a
-                              href="https://mini-rakutenv.herokuapp.com/"
-                              target="_blank"
-                              >Visit the website</a
-                            >
-                          </button>
-                          <button class="work-button">
-                            <a href="./projects/project?id=02">Read More</a>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-sm-4 work-container">
-                      <a
-                        href="https://jatours.herokuapp.com/"
-                        target="_blank"
-                        title=""
-                        class="black-image-project-hover"
-                      >
-                        <img
-                          src="./static/assets/images/jatours-main.JPG"
-                          alt=""
-                          class="img-responsive"
-                        />
-                      </a>
-                      <div class="overlay">
-                        <div class="work-text">
-                          <button class="work-button">
-                            <a
-                              href="https://jatours.herokuapp.com/"
-                              target="_blank"
-                              >Visit the website</a
-                            >
-                          </button>
-                          <button class="work-button">
-                            <a href="./projects/project?id=03">Read More</a>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!--/row-->
-                </div>
-                <!--/item-->
-                <div class="item">
-                  <div class="row">
-                    <div class="col-sm-4 work-container">
-                      <a
-                        href="https://find-a-face-ai.herokuapp.com/"
-                        target="_blank"
-                        title=""
-                        class="black-image-project-hover"
-                      >
-                        <img
-                          src="./static/assets/images/smart-ai.JPG"
-                          alt=""
-                          class="img-responsive"
-                        />
-                      </a>
-                      <div class="overlay">
-                        <div class="work-text">
-                          <button class="work-button">
-                            <a
-                              href="https://find-a-face-ai.herokuapp.com/"
-                              target="_blank"
-                              >Visit the website</a
-                            >
-                          </button>
-                          <button class="work-button">
-                            <a href="./projects/project?id=04">Read More</a>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-sm-4 work-container">
-                      <a
-                        href="https://crypto-mania.herokuapp.com/users/sign_in"
-                        target="_blank"
-                        title=""
-                        class="black-image-project-hover"
-                      >
-                        <img
-                          src="./static/assets/images/cryptomania.JPG"
-                          alt=""
-                          class="img-responsive"
-                        />
-                      </a>
-                      <div class="overlay">
-                        <div class="work-text">
-                          <button class="work-button">
-                            <a
-                              href=" https://crypto-mania.herokuapp.com/users/sign_in"
-                              target="_blank"
-                              >Visit the website</a
-                            >
-                          </button>
-                          <button class="work-button">
-                            <a href="./projects/project?id=05">Read More</a>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-sm-4 work-container">
-                      <a
-                        href="https://star-wars-robots.herokuapp.com/"
-                        target="_blank"
-                        title=""
-                        class="black-image-project-hover"
-                      >
-                        <img
-                          src="./static/assets/images/star-wars.JPG"
-                          alt=""
-                          class="img-responsive"
-                        />
-                      </a>
-                      <div class="overlay">
-                        <div class="work-text">
-                          <button class="work-button">
-                            <a
-                              href="https://star-wars-robots.herokuapp.com/"
-                              target="_blank"
-                              >Visit the website</a
-                            >
-                          </button>
-                          <button class="work-button">
-                            <a href="./projects/project?id=06">Read More</a>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                        {% endfor %}
+                      </div> <!--/row-->
+                    </div> <!--/item-->
+                {% endfor %}
+              </div> <!--/carousel-inner-->
+              <a class="left carousel-control" href="#personalCarousel" data-slide="prev">‹</a>
+              <a class="right carousel-control" href="#personalCarousel" data-slide="next">›</a>
+              </div> 
+            </div> <!--/EMPLOYMENT CAROUSEL Carousel-->
+          </div>
 
-                <!--/item-->
+          <!-- Proffesional Projects  -->
+          <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 section-container-spacer">
+              <div class="text-center">
+                <h1 class="h2"> Proffesional Projects</h1>
               </div>
-              <!--/carousel-inner-->
-              <a
-                class="left carousel-control"
-                href="#myCarousel"
-                data-slide="prev"
-                >‹</a
-              >
-
-              <a
-                class="right carousel-control"
-                href="#myCarousel"
-                data-slide="next"
-                >›</a
-              >
             </div>
-
-            <!--/myCarousel-->
+  
+            <div class="col-md-12">
+              <div id="employmentCarousel" class="carousel slide projects-carousel">
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                  {%  for key in projects["proffesional_projects"] :%} 
+                    {% if key  == 'row-1'%}
+                      <div class="item active">
+                    {% else %}
+                      <div class="item">
+                    {% endif %}
+                        <div class="row">
+                          {%  for index in range(0, projects["proffesional_projects"][key]|length):%} 
+                          <div class="col-sm-4 work-container">
+                            <a
+                              href="{{projects['proffesional_projects'][key][index]['URL']}}"
+                              target="_blank"
+                              title=""
+                              class="black-image-project-hover"
+                            >
+                              <img
+                                src="./static/assets/images/{{projects['proffesional_projects'][key][index]['images'][0]}}"
+                                alt=""
+                                class="img-responsive"
+                              />
+                            </a>
+                            <div class="overlay">
+                              <div class="work-text">
+                                <button class="work-button">
+                                  <i class="fab fa-react"></i>
+                                  <!-- <a
+                                    ref="{{projects['proffesional_projects'][key][index]['URL']}}"
+                                    target="_blank"
+                                    >Visit the website</a
+                                  > -->
+                                </button>
+                                <button class="work-button">
+                                  <a href="./projects/project?id={{projects['proffesional_projects'][key][index]['id']}}&category=proffesional_projects">Read More</a>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          {% endfor %}
+                        </div> <!--/row-->
+                      </div> <!--/item-->
+                  {% endfor %}
+                </div> <!--/carousel-inner-->
+                <a class="left carousel-control" href="#employmentCarousel" data-slide="prev">‹</a>
+                <a class="right carousel-control" href="#employmentCarousel" data-slide="next">›</a>
+                </div> 
+              </div> <!--/EMPLOYMENT CAROUSEL Carousel-->
+            </div>
           </div>
         </div>
       </div>

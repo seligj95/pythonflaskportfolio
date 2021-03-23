@@ -301,9 +301,21 @@ img {
     display: block;
     max-width: 100%;
     height: auto;
+    margin:0 auto;
+    
+}
+.img-shadow {
+    box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+}
+.desc-header {
+    background-color: #F8F8F8;
 }
 .img-rounded {
     border-radius: 0;
+}
+.proj-button {
+    display: flex;
+    justify-content: space-between;
 }
 .img-thumbnail {
     padding: 4px;

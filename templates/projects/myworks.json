@@ -1,44 +1,185 @@
-[
-    {
-        "id":"01",
-        "title":"E-commerce Project",
-        "images":["e-commerce-project-main.JPG"],
-        "description": "Lorem Something etc"
 
+{
+    "personal_projects" : {
+        "row-1" : [
+            {
+                "id":"01",
+                "title":"E-commerce Project",
+                "section":"Personal Project",
+                "images":["e-commerce-project-main.JPG"],
+                "description": "Full Stack E-commerce platform with integrated Stripe payment system and Firbase DB",
+                "technical-sheet": [
+                    "React Router",
+                    "Redux",
+                    "Redux Saga",
+                    "React Hooks",
+                    "Firebase",
+                    "Stripe API",
+                    "Styled-Components",
+                    "GraphQL"
+                ],
+                "URL":"https://mf-online-shop.herokuapp.com/"
+        
+            },
+            {
+                "id":"02",
+                "title":"Mini Rakuten TV",
+                "section":"Personal Project",
+                "images":["mini-rakuten.PNG"],
+                "description": "Lorem Something etc",
+                "technical-sheet": [
+                    "React Router",
+                    "Redux",
+                    "Redux Saga",
+                    "React Hooks",
+                    "Firebase",
+                    "Stripe API",
+                    "Styled-Components",
+                    "GraphQL"
+                ],
+                "URL":"https://mini-rakutenv.herokuapp.com/"
+        
+            },
+            {
+                "id":"03",
+                "title":"Japan Tours",
+                "section":"Personal Project",
+                "images":["jatours-main.JPG"],
+                "description": "Lorem Something etc",
+                "technical-sheet": [
+                    "React Router",
+                    "Redux",
+                    "Redux Saga",
+                    "React Hooks",
+                    "Firebase",
+                    "Stripe API",
+                    "Styled-Components",
+                    "GraphQL"
+                ],
+                "URL":"https://jatours.herokuapp.com/"
+        
+            }
+        ],
+        "row-2" : [
+            {
+                "id":"04",
+                "title":"Face Recognition AI",
+                "section":"Personal Project",
+                "images":["smart-ai.JPG"],
+                "description": "Lorem Something etc",
+                "technical-sheet": [
+                    "React Router",
+                    "Redux",
+                    "Redux Saga",
+                    "React Hooks",
+                    "Firebase",
+                    "Stripe API",
+                    "Styled-Components",
+                    "GraphQL"
+                ],
+                "URL":"https://find-a-face-ai.herokuapp.com/"
+            },
+            {
+                "id":"05",
+                "title":"Crytpo Mania",
+                "section":"Personal Project",
+                "images":["cryptomania.JPG"],
+                "description": "Lorem Something etc",
+                "technical-sheet": [
+                    "React Router",
+                    "Redux",
+                    "Redux Saga",
+                    "React Hooks",
+                    "Firebase",
+                    "Stripe API",
+                    "Styled-Components",
+                    "GraphQL"
+                ],
+                "URL":"https://crypto-mania.herokuapp.com/"
+        
+            },
+            {
+                "id":"06",
+                "title":"Star Wars Robots",
+                "section":"Personal Project",
+                "images":["star-wars.JPG"],
+                "description": "Lorem Something etc",
+                "technical-sheet": [
+                    "React Router",
+                    "Redux",
+                    "Redux Saga",
+                    "React Hooks",
+                    "Firebase",
+                    "Stripe API",
+                    "Styled-Components",
+                    "GraphQL"
+                ],
+                "URL":"https://star-wars-robots.herokuapp.com/"
+        
+            }
+        ]
+        
     },
-    {
-        "id":"02",
-        "title":"Mini Rakuten TV",
-        "images":["mini-rakuten.PNG"],
-        "description": "Lorem Something etc"
-
-    },
-    {
-        "id":"03",
-        "title":"Japan Tours",
-        "images":["jatours-main.JPG"],
-        "description": "Lorem Something etc"
-
-    },
-    {
-        "id":"04",
-        "title":"Face Recognition AI",
-        "images":["smart-ai.JPG"],
-        "description": "Lorem Something etc"
-
-    },
-    {
-        "id":"05",
-        "title":"Crytpo Mania",
-        "images":["cryptomania.JPG"],
-        "description": "Lorem Something etc"
-
-    },
-    {
-        "id":"06",
-        "title":"Star Wars Robots",
-        "images":["star-wars.JPG"],
-        "description": "Lorem Something etc"
-
+    "proffesional_projects" : {
+        "row-1" : [
+            {
+                "id":"10",
+                "title":"Monarch",
+                "section":"Proffesional Project",
+                "images":["codechrysalis.JPG"],
+                "description": "Lorem Something etc",
+                "technical-sheet": [
+                    "React Router",
+                    "Redux",
+                    "Redux Saga",
+                    "React Hooks",
+                    "Firebase",
+                    "Stripe API",
+                    "Styled-Components",
+                    "GraphQL"
+                ],
+                "URL":"https://monarch.codechrysalis.io/"
+        
+            },
+            {
+                "id":"11",
+                "title":"Real Estate CRM",
+                "section":"Proffesional Project",
+                "images":["glam.JPG"],
+                "description": "Lorem Something etc",
+                "technical-sheet": [
+                    "React Router",
+                    "Redux",
+                    "Redux Saga",
+                    "React Hooks",
+                    "Firebase",
+                    "Stripe API",
+                    "Styled-Components",
+                    "GraphQL"
+                ],
+                "URL":"https://jp.list-property.com/auth/login"
+        
+            },
+            {
+                "id":"12",
+                "title":"LSIR Gobal",
+                "section":"Proffesional Project",
+                "images":["listsothebys.JPG"],
+                "description": "Lorem Something etc",
+                "technical-sheet": [
+                    "React Router",
+                    "Redux",
+                    "Redux Saga",
+                    "React Hooks",
+                    "Firebase",
+                    "Stripe API",
+                    "Styled-Components",
+                    "GraphQL"
+                ],
+                "URL":"https://lsirglobal.com/"
+        
+            }
+        ]
     }
-]
+
+}
